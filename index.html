@@ -12,381 +12,459 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
         }
 
         /* Header */
-        header {
+        .header {
             text-align: center;
-            padding: 80px 20px 40px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            margin-bottom: 56px;
         }
 
         .profile-icon {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            margin: 0 auto 24px;
+            background-color: #222222;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
-            color: #ffffff;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+            margin: 0 auto 20px;
         }
 
-        header h1 {
-            font-size: 36px;
-            color: #ffffff;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        header .subtitle {
-            font-size: 18px;
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            padding: 20px;
-            background-color: #1e293b;
-            border-bottom: 1px solid #334155;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            color: #94a3b8;
-            text-decoration: none;
+        .header .subtitle {
             font-size: 15px;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            color: #888888;
         }
 
-        nav a:hover {
-            color: #ffffff;
-            background-color: #334155;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        /* Sections */
         section {
-            padding: 60px 0;
+            margin-bottom: 48px;
         }
 
         section h2 {
-            font-size: 28px;
-            color: #ffffff;
-            margin-bottom: 32px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #6366f1;
-            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888888;
+            margin-bottom: 16px;
         }
 
-        /* About Section */
-        .about-content {
-            background-color: #1e293b;
-            border-radius: 16px;
-            padding: 32px;
-            border: 1px solid #334155;
+        /* Editable fields */
+        .editable {
+            cursor: text;
+            border-radius: 6px;
+            padding: 2px 4px;
+            margin: -2px -4px;
+            transition: background-color 0.2s;
+            outline: none;
+            min-height: 1em;
         }
 
-        .about-content p {
+        .editable:hover {
+            background-color: #f5f5f5;
+        }
+
+        .editable:focus {
+            background-color: #f0f4ff;
+            box-shadow: 0 0 0 2px #bcd0ff;
+        }
+
+        .editable:empty::before {
+            content: attr(data-placeholder);
+            color: #cccccc;
+        }
+
+        /* About */
+        .about-text {
             font-size: 16px;
-            color: #cbd5e1;
-            margin-bottom: 16px;
+            color: #444444;
         }
 
-        .about-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 16px;
-        }
-
-        .skill-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            border-color: #6366f1;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
-        }
-
-        .skill-card .skill-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
-        }
-
-        .skill-card .skill-name {
-            font-size: 14px;
-            color: #e2e8f0;
-            font-weight: 500;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 16px;
-            padding: 28px;
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            border-color: #6366f1;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
-        }
-
-        .project-card h3 {
-            font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-
-        .project-card p {
-            font-size: 14px;
-            color: #94a3b8;
-            margin-bottom: 16px;
-        }
-
-        .project-tags {
+        /* Skills */
+        .skills-list {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
 
-        .project-tags span {
-            background-color: rgba(99, 102, 241, 0.15);
-            color: #a5b4fc;
-            padding: 4px 12px;
+        .skill-tag {
+            background-color: #f3f3f3;
+            padding: 6px 14px;
             border-radius: 20px;
+            font-size: 14px;
+            color: #444444;
+        }
+
+        .skill-tag .editable:hover {
+            background-color: #eaeaea;
+        }
+
+        .add-btn {
+            background: none;
+            border: 1.5px dashed #cccccc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #aaaaaa;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .add-btn:hover {
+            border-color: #999999;
+            color: #666666;
+        }
+
+        /* Projects */
+        .project-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .project-item:first-child {
+            padding-top: 0;
+        }
+
+        .project-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .project-item h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-item p {
+            font-size: 14px;
+            color: #888888;
+        }
+
+        .project-item .remove-btn {
+            background: none;
+            border: none;
+            color: #cccccc;
+            cursor: pointer;
             font-size: 12px;
-            font-weight: 500;
+            margin-top: 8px;
+            padding: 2px 0;
+            transition: color 0.2s;
         }
 
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 16px;
+        .project-item .remove-btn:hover {
+            color: #ff5555;
         }
 
-        .contact-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 24px;
+        /* Contact */
+        .contact-item {
             display: flex;
-            align-items: center;
-            gap: 16px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .contact-card:hover {
-            border-color: #6366f1;
-            transform: translateY(-2px);
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(99, 102, 241, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-
-        .contact-info .label {
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 2px;
-        }
-
-        .contact-info .value {
+            align-items: baseline;
+            gap: 12px;
+            padding: 10px 0;
             font-size: 15px;
-            color: #e2e8f0;
-            font-weight: 500;
+        }
+
+        .contact-item .label {
+            font-weight: 600;
+            min-width: 64px;
+            font-size: 14px;
+            color: #888888;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222222;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 12px;
+            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+        }
+
+        .toolbar button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            transition: background-color 0.2s;
+        }
+
+        .toolbar button:hover {
+            background-color: #444444;
+        }
+
+        .toast {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background-color: #222222;
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+            z-index: 200;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
-            font-size: 14px;
+            font-size: 13px;
+            color: #cccccc;
+            padding-top: 24px;
+            border-top: 1px solid #f0f0f0;
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 28px;
-            }
+        /* Divider for remove skill */
+        .skill-tag .remove-x {
+            display: none;
+            margin-left: 4px;
+            cursor: pointer;
+            color: #999999;
+            font-weight: bold;
+        }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+        .skill-tag:hover .remove-x {
+            display: inline;
+        }
 
-            nav {
-                gap: 8px;
-            }
-
-            nav a {
-                font-size: 13px;
-                padding: 6px 10px;
-            }
+        .remove-x:hover {
+            color: #ff5555;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="profile-icon">N</div>
-        <h1>Nets World</h1>
-        <p class="subtitle">Developer / Creator</p>
-    </header>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="toast" id="toast"></div>
 
     <div class="container">
 
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>안녕하세요! Nets World에 오신 것을 환영합니다.</p>
-                <p>저는 새로운 기술을 배우고 창의적인 프로젝트를 만드는 것을 좋아하는 개발자입니다. 다양한 경험을 통해 성장하며, 더 나은 결과물을 만들어 나가고 있습니다.</p>
-                <p>이 페이지는 저의 기술, 프로젝트, 그리고 연락처를 소개하기 위해 만들어졌습니다.</p>
+        <!-- Header -->
+        <div class="header">
+            <div class="profile-icon">N</div>
+            <h1><span class="editable" contenteditable="true" data-key="name" data-placeholder="이름을 입력하세요">Nets World</span></h1>
+            <p class="subtitle"><span class="editable" contenteditable="true" data-key="subtitle" data-placeholder="직함을 입력하세요">Developer / Creator</span></p>
+        </div>
+
+        <!-- About -->
+        <section>
+            <h2>About</h2>
+            <div class="about-text">
+                <div class="editable" contenteditable="true" data-key="about" data-placeholder="자기소개를 입력하세요">안녕하세요! 새로운 기술을 배우고 창의적인 프로젝트를 만드는 것을 좋아하는 개발자입니다. 다양한 경험을 통해 성장하며, 더 나은 결과물을 만들어 나가고 있습니다.</div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
+        <!-- Skills -->
+        <section>
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">&#x1f310;</div>
-                    <div class="skill-name">HTML / CSS</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">&#x26a1;</div>
-                    <div class="skill-name">JavaScript</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">&#x1f40d;</div>
-                    <div class="skill-name">Python</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">&#x1f5c4;</div>
-                    <div class="skill-name">Database</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">&#x1f6e0;</div>
-                    <div class="skill-name">Git</div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">&#x2601;</div>
-                    <div class="skill-name">Cloud</div>
-                </div>
+            <div class="skills-list" id="skillsList">
+                <span class="skill-tag"><span class="editable" contenteditable="true" data-placeholder="skill">HTML / CSS</span><span class="remove-x" onclick="removeSkill(this)">&times;</span></span>
+                <span class="skill-tag"><span class="editable" contenteditable="true" data-placeholder="skill">JavaScript</span><span class="remove-x" onclick="removeSkill(this)">&times;</span></span>
+                <span class="skill-tag"><span class="editable" contenteditable="true" data-placeholder="skill">Python</span><span class="remove-x" onclick="removeSkill(this)">&times;</span></span>
+                <span class="skill-tag"><span class="editable" contenteditable="true" data-placeholder="skill">Git</span><span class="remove-x" onclick="removeSkill(this)">&times;</span></span>
+                <button class="add-btn" onclick="addSkill()">+ Add</button>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
+        <!-- Projects -->
+        <section>
             <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Nets Box</h3>
-                    <p>개인 프로젝트를 모아놓은 공간입니다. 다양한 실험과 아이디어를 구현하고 있습니다.</p>
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>새로운 프로젝트를 준비 중입니다. 곧 업데이트 예정입니다.</p>
-                    <div class="project-tags">
-                        <span>Coming Soon</span>
-                    </div>
+            <div id="projectsList">
+                <div class="project-item">
+                    <h3><span class="editable" contenteditable="true" data-placeholder="프로젝트 이름">Nets Box</span></h3>
+                    <p><span class="editable" contenteditable="true" data-placeholder="프로젝트 설명">개인 프로젝트를 모아놓은 공간입니다.</span></p>
+                    <button class="remove-btn" onclick="removeProject(this)">삭제</button>
                 </div>
             </div>
+            <button class="add-btn" style="margin-top: 16px" onclick="addProject()">+ Add Project</button>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
+        <!-- Contact -->
+        <section>
             <h2>Contact</h2>
-            <div class="contact-grid">
-                <a class="contact-card" href="mailto:example@email.com">
-                    <div class="contact-icon">&#x2709;</div>
-                    <div class="contact-info">
-                        <div class="label">Email</div>
-                        <div class="value">example@email.com</div>
-                    </div>
-                </a>
-                <a class="contact-card" href="https://github.com/Nets104" target="_blank">
-                    <div class="contact-icon">&#x1f4bb;</div>
-                    <div class="contact-info">
-                        <div class="label">GitHub</div>
-                        <div class="value">github.com/Nets104</div>
-                    </div>
-                </a>
+            <div class="contact-item">
+                <span class="label">Email</span>
+                <span class="editable" contenteditable="true" data-key="email" data-placeholder="email@example.com">example@email.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="label">GitHub</span>
+                <span class="editable" contenteditable="true" data-key="github" data-placeholder="github.com/username">github.com/Nets104</span>
             </div>
         </section>
 
+        <footer>&copy; 2026 Nets World</footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 Nets World. All rights reserved.
-    </footer>
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <button onclick="saveData()">Save</button>
+        <button onclick="resetData()">Reset</button>
+    </div>
+
+    <script>
+        // Show toast message
+        function showToast(msg) {
+            var toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(function() { toast.classList.remove('show'); }, 2000);
+        }
+
+        // Add new skill
+        function addSkill() {
+            var tag = document.createElement('span');
+            tag.className = 'skill-tag';
+            tag.innerHTML = '<span class="editable" contenteditable="true" data-placeholder="skill"></span><span class="remove-x" onclick="removeSkill(this)">&times;</span>';
+            var btn = document.querySelector('#skillsList .add-btn');
+            document.getElementById('skillsList').insertBefore(tag, btn);
+            tag.querySelector('.editable').focus();
+        }
+
+        // Remove skill
+        function removeSkill(el) {
+            el.parentElement.remove();
+        }
+
+        // Add new project
+        function addProject() {
+            var item = document.createElement('div');
+            item.className = 'project-item';
+            item.innerHTML = '<h3><span class="editable" contenteditable="true" data-placeholder="프로젝트 이름"></span></h3><p><span class="editable" contenteditable="true" data-placeholder="프로젝트 설명"></span></p><button class="remove-btn" onclick="removeProject(this)">삭제</button>';
+            document.getElementById('projectsList').appendChild(item);
+            item.querySelector('.editable').focus();
+        }
+
+        // Remove project
+        function removeProject(el) {
+            el.parentElement.remove();
+        }
+
+        // Save to localStorage
+        function saveData() {
+            var data = {};
+
+            // Save keyed fields
+            document.querySelectorAll('.editable[data-key]').forEach(function(el) {
+                data[el.dataset.key] = el.innerHTML;
+            });
+
+            // Save skills
+            var skills = [];
+            document.querySelectorAll('#skillsList .skill-tag .editable').forEach(function(el) {
+                if (el.textContent.trim()) skills.push(el.textContent.trim());
+            });
+            data.skills = skills;
+
+            // Save projects
+            var projects = [];
+            document.querySelectorAll('#projectsList .project-item').forEach(function(item) {
+                var editables = item.querySelectorAll('.editable');
+                projects.push({
+                    name: editables[0] ? editables[0].textContent.trim() : '',
+                    desc: editables[1] ? editables[1].textContent.trim() : ''
+                });
+            });
+            data.projects = projects;
+
+            localStorage.setItem('nets-profile', JSON.stringify(data));
+            showToast('Saved!');
+        }
+
+        // Load from localStorage
+        function loadData() {
+            var raw = localStorage.getItem('nets-profile');
+            if (!raw) return;
+
+            var data = JSON.parse(raw);
+
+            // Restore keyed fields
+            document.querySelectorAll('.editable[data-key]').forEach(function(el) {
+                if (data[el.dataset.key] !== undefined) {
+                    el.innerHTML = data[el.dataset.key];
+                }
+            });
+
+            // Restore skills
+            if (data.skills) {
+                var container = document.getElementById('skillsList');
+                var btn = container.querySelector('.add-btn');
+                container.querySelectorAll('.skill-tag').forEach(function(el) { el.remove(); });
+                data.skills.forEach(function(skill) {
+                    var tag = document.createElement('span');
+                    tag.className = 'skill-tag';
+                    tag.innerHTML = '<span class="editable" contenteditable="true" data-placeholder="skill">' + escapeHtml(skill) + '</span><span class="remove-x" onclick="removeSkill(this)">&times;</span>';
+                    container.insertBefore(tag, btn);
+                });
+            }
+
+            // Restore projects
+            if (data.projects) {
+                var list = document.getElementById('projectsList');
+                list.innerHTML = '';
+                data.projects.forEach(function(proj) {
+                    var item = document.createElement('div');
+                    item.className = 'project-item';
+                    item.innerHTML = '<h3><span class="editable" contenteditable="true" data-placeholder="프로젝트 이름">' + escapeHtml(proj.name) + '</span></h3><p><span class="editable" contenteditable="true" data-placeholder="프로젝트 설명">' + escapeHtml(proj.desc) + '</span></p><button class="remove-btn" onclick="removeProject(this)">삭제</button>';
+                    list.appendChild(item);
+                });
+            }
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Reset to default
+        function resetData() {
+            if (confirm('모든 내용을 초기화할까요?')) {
+                localStorage.removeItem('nets-profile');
+                location.reload();
+            }
+        }
+
+        // Load saved data on start
+        loadData();
+    </script>
 
 </body>
 </html>
